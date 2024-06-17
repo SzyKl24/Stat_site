@@ -3,19 +3,25 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Moja Strona</title>
+    <title>Statystyka</title>
     <style>
       body {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 100vh;
+        height: 35vh;
         margin: 0;
         font-family: Arial, sans-serif;
       }
       h1 {
         margin: 0;
+      }
+      .buttoncontainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
       }
       button {
         background-color: #4CAF50; /* Zielony */
@@ -38,9 +44,13 @@
     <h1>Witaj na naszej stronie!</h1>
     <p>To jest strona internetowa używająca Flask.</p>
     
-    <!-- Przyciski -->
-    <a href="/about">
-      <button type="button">O nas</button>
-    </a>
-  </body>
-</html>
+    <div class="buttoncontainer">
+      <a href="/about">
+        <button type="button">O nas</button>
+      </a>
+      <a href="/contact">
+        <button type="button">Kontakt</button>
+      </a>
+      <a href="/spis">
+        <button type="button">Spis treści</button>
+      </a>
