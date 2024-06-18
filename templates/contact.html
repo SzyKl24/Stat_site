@@ -14,6 +14,24 @@
         margin: 0;
         font-family: Arial, sans-serif;
       }
+      button {
+        background-color: #4CAF50; /* Zielony */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+      .buttoncontainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+      }
       h1 {
         margin: 0;
       }
@@ -23,5 +41,14 @@
   <body>
     <h1>Kontakt</h1>
     <p>Jeśli chcesz się z nami skontaktować, napisz na adres: 277461@student.pwr.edu.pl <a href="mailto: 277461@student.pwr.edu.pl">
-        
+    <div class = "buttoncontainer">
+      <a href="/">
+        <button type="button">Strona główna</button>
+      </a>
+      <a href="/about">
+        <button type="button">O nas</button>
+      </a>
+      <a href="/spis">
+        <button type="button">Spis treści</button>
+      </a>
     </a>
