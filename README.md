@@ -10,4 +10,8 @@
 
 # Podział jakiś by się przydał
 
+- MathJax
+- JSXGraph
+- D3.js
+- TikZJax
 
