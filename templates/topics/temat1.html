@@ -10,12 +10,13 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 35vh;
+        height: 100vh;
         margin: 0;
         font-family: Arial, sans-serif;
+        padding: 20px
       }
-      h1 {
-        margin: 0;
+      h1, p{
+        text-align: center
       }
       .buttoncontainer {
         display: flex;
@@ -34,25 +35,42 @@
         font-size: 16px;
         margin: 4px 2px;
         cursor: pointer;
+        transition: background-color 0.3s ease;
       }
       button:hover {
         background-color: #45a049;
       }
       h1 {
-        margin: 30px;
+        margin: 20px 0;
       }
       p {
-        margin: 30px;
+        margin: 20px 0;
       }
+      b {
+            font-weight: bold;
+        }
       </style>
 </head>
 <body>
-    <h1>Temat 1</h1>
-    <div class="buttoncontainer">
-        <a href = "/"> 
-            <button>Strona główna</button>
-        </a>
-        <a href = "/spis"> 
-            <button>Spis</button>
-        </a>
+  <h1>Temat 1: Wprowadzenie do Statystyki</h1>
+  <h2>Czym jest statystyka?</h2>
+  <p><b>Statystyka</b> jest dziedziną matematyki, która zajmuje się zbieraniem, analizowaniem i organizowaniem danych. 
+    Jest nieodzownym narzędziem w wielu dziedzinach wiedzy, takich jak nauki społeczne, medycyna i wiele innych. 
+    Statystyka pozwala na podejmowanie świadomych decyzji w oparciu o dane, umożliwiając lepsze zrozumienie zjawisk i procesów zachodzących w otaczającym nas świecie.
+    zajmuje się zbieraniem klasyfikowaniem i graficznym przedstawianiem odpowiednich danych, 
+    a więc opisem liczbowym procesów masowych oraz
+    wnioskowaniem na temat powtarzalności zjawisk czy procesów, a co za tym idzie
+    dostarczaniem informacji niezbędnych do podejmowania różnego rodzaju decyzji.</p>
+  <h2>Czym jest statystyka matematyczna?</h2>
+  <p><b>Statystyka matematyczna</b> to dział statystyki, posługujący się metodami wnioskowania statystycznego (opartymi
+    z reguły na rachunku prawdopodobieństwa) i innych działów matematyki do rozwijania statystyki z czysto matematycznego punktu widzenia.</p>
+  <p>W kolejnych tematach zajmiemy się opisem konkretnych zagadnień matematycznych używanych w matematyce.</p>
+    
+  <div class="buttoncontainer">
+    <a href = "/"> 
+        <button>Strona główna</button>
+    </a>
+    <a href = "/spis"> 
+        <button>Spis</button>
+    </a>
 </html>
