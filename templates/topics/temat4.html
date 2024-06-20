@@ -10,7 +10,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 35vh;
+        height: 220vh;
         margin: 0;
         font-family: Arial, sans-serif;
       }
@@ -44,15 +44,93 @@
       p {
         margin: 30px;
       }
+      b {
+            font-weight: bold;
+        }
+      .obramowanieprzykład {
+            border: 1px solid #4CAF50;
+            padding: 10px;
+            margin: 10px 0;
+            text-align: left; 
+        }
+      .obramowaniezadanie {
+            border: 1px solid #cb3131;
+            padding: 10px;
+            margin: 10px 0;
+        }
       </style>
+      <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-    <h1>Temat 4</h1>
-    <div class="buttoncontainer">
-        <a href = "/"> 
-            <button>Strona główna</button>
-        </a>
-        <a href = "/spis"> 
-            <button>Spis</button>
-        </a>
+  <h1>Temat 4: Błąd bezwzględny i względny pomiaru</h1>
+  <p><b>Błąd bezwzględny</b> (Δx) to różnica między wartością zmierzoną (x₀) a dokładną (x), obliczana jako |x - x₀|.</p>
+  <p><b>Błąd względny</b> (δ) to stosunek błędu bezwzględnego do dokładnej wartości, wyrażony jako δ = Δx / x, często podawany w procentach.</p>
+  <div class="obramowanieprzykład">
+      <p><b>Przykład 1:</b> Dla boiska o długości 122,5 m i zmierzonej 120 m:</p>
+      <p>
+          \[
+          \Delta x = |122.5 - 120| = 2.5 \, \text{m}
+          \]
+      </p>
+      <p>
+          \[
+          \delta = \frac{\Delta x}{x} = \frac{2.5}{122.5} \approx 0.0204 \, (2.04\%)
+          \]
+      </p>
+  </div>
+  <div class="obramowanieprzykład">
+    <p><b>Przykład 2:</b> Pomiar masy ciała:</p>
+      <p>Dokładna masa: 70 kg. Zmierzona masa: 68 kg.</p>
+      <p>
+          \[
+          \Delta x = |70 - 68| = 2 \, \text{kg}
+          \]
+      </p>
+      <p>
+          \[
+          \delta = \frac{\Delta x}{x} = \frac{2}{70} \approx 0.0286 \, (2.86\%)
+          \]
+      </p>
+  </div>
+  <div class="obramowaniezadanie">
+      <p><b>Zadanie 1:</b> Oblicz błąd bezwzględny i względny dla pomiaru długości, gdzie dokładna długość wynosi 50 cm, a zmierzona 48 cm.</p>
+      <button onclick="showAnswer()">Pokaż odpowiedź</button>
+      <p id="answer" style="display:none;">
+          \[
+          \Delta x = |50 - 48| = 2 \, \text{cm}
+          \]
+          \[
+          \delta = \frac{\Delta x}{x} = \frac{2}{50} = 0.04 \, (4\%)
+          \]
+      </p>
+  </div>
+  <div class="obramowaniezadanie">
+      <p><b>Zadanie 2:</b> Oblicz błąd bezwzględny i względny dla pomiaru czasu, gdzie dokładny czas wynosi 10 s, a zmierzony 9.8 s.</p>
+      <button onclick="showAnswer2()">Pokaż odpowiedź</button>
+      <p id="answer2" style="display:none;">
+          \[
+          \Delta x = |10 - 9.8| = 0.2 \, \text{s}
+          \]
+          \[
+          \delta = \frac{\Delta x}{x} = \frac{0.2}{10} = 0.02 \, (2\%)
+          \]
+      </p>
+  </div>
+  <div class="buttoncontainer">
+      <a href="/">
+          <button>Strona główna</button>
+      </a>
+      <a href="/spis">
+          <button>Spis</button>
+      </a>
+  </div>
+  <script>
+      function showAnswer() {
+          document.getElementById('answer').style.display = 'block';
+      }
+      function showAnswer2() {
+          document.getElementById('answer2').style.display = 'block';
+      }
+  </script>
+</body>
 </html>
