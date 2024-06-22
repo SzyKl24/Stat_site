@@ -10,7 +10,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 220vh;
+        height: 310vh;
         margin: 0;
         font-family: Arial, sans-serif;
       }
@@ -40,6 +40,7 @@
       }
       h1 {
         margin: 30px;
+        text-align: center;
       }
       p {
         margin: 30px;
@@ -65,6 +66,8 @@
   <h1>Temat 4: Błąd bezwzględny i względny pomiaru</h1>
   <p><b>Błąd bezwzględny</b> (Δx) to różnica między wartością zmierzoną (x₀) a dokładną (x), obliczana jako |x - x₀|.</p>
   <p><b>Błąd względny</b> (δ) to stosunek błędu bezwzględnego do dokładnej wartości, wyrażony jako δ = Δx / x, często podawany w procentach.</p>
+  <p><b>Dokładność pomiaru:</b> Błąd względny mówi o precyzji pomiaru. Małe błędy względne oznaczają dokładne pomiary. Błąd bezwzględny pokazuje różnicę od wartości rzeczywistej.</p>
+  <p><b>Znaczenie w praktyce:</b> Ważne w nauce i technice, np. w meteorologii, gdzie precyzyjne pomiary są kluczowe.</p>
   <div class="obramowanieprzykład">
       <p><b>Przykład 1:</b> Dla boiska o długości 122,5 m i zmierzonej 120 m:</p>
       <p>
@@ -92,6 +95,33 @@
           \]
       </p>
   </div>
+  <div class="obramowanieprzykład">
+    <p><b>Przykład 3:</b> Zaokrąglenie liczby 48 do pełnych dziesiątek:</p>
+    <p>
+        \[
+        \Delta x = |48 - 50| = 2
+        \]
+    </p>
+    <p>
+        \[
+        \delta = \frac{2}{48} \approx 0.0417 \, (4.17\%)
+        \]
+    </p>
+</div>
+<div class="obramowanieprzykład">
+    <p><b>Przykład 4:</b> Szacowanie wzrostu:</p>
+    <p>Dokładny wzrost: 162 cm. Oszacowania: 160 cm i 164 cm.</p>
+    <p>
+        \[
+        \Delta x = |162 - 160| = 2 \, \text{cm} \quad \text{(niedomiar)}
+        \]
+    </p>
+    <p>
+        \[
+        \Delta x = |162 - 164| = 2 \, \text{cm} \quad \text{(nadmiar)}
+        \]
+    </p>
+</div>
   <div class="obramowaniezadanie">
       <p><b>Zadanie 1:</b> Oblicz błąd bezwzględny i względny dla pomiaru długości, gdzie dokładna długość wynosi 50 cm, a zmierzona 48 cm.</p>
       <button onclick="showAnswer()">Pokaż odpowiedź</button>

@@ -10,7 +10,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 190vh;
+        height: 420vh;
         margin: 0;
         font-family: Arial, sans-serif;
       }
@@ -68,6 +68,24 @@
     \overline{x}_w = \frac{x_1 \cdot w_1 + x_2 \cdot w_2 + \cdots + x_n \cdot w_n}{w_1 + w_2 + \cdots + w_n}
     \].
   </p>
+  <p>
+    Warto pamiętać, że średnia ważona pozwala przypisać większą wagę niektórym wartościom, 
+    aby miały one większy wpływ na wynik końcowy. Przykładem może być sytuacja na uczelni, 
+    gdzie oceny z kolokwiów mają mniejsze znaczenie niż oceny z egzaminów.
+  </p>
+  <p><b>Zastosowania:</b></p>
+  <p>
+    Średnia ważona jest używana w wielu dziedzinach, takich jak statystyka, ekonomia, finanse, a nawet w ocenianiu wyników sportowych. Główną zaletą średniej ważonej jest jej zdolność do odzwierciedlenia ważności poszczególnych elementów, co nie jest możliwe przy użyciu zwykłej średniej arytmetycznej.
+  </p>
+  <p>
+    W statystyce, średnia ważona może być używana do analizy danych, gdzie różne obserwacje mają różne poziomy wiarygodności lub istotności. Na przykład, w badaniach medycznych, wyniki większych badań mogą być uznane za bardziej wiarygodne niż wyniki mniejszych badań.
+  </p>
+  <p>
+    W finansach, średnia ważona jest często stosowana w celu obliczenia średniej ceny akcji, gdzie różne transakcje mogą mieć różne wolumeny. Przykładem może być średnia ważona cena zamknięcia (VWAP - Volume Weighted Average Price), która jest używana przez traderów do oceny efektywności swoich transakcji.
+  </p>
+  <p>
+    W ekonomii, średnia ważona może być używana do obliczania wskaźników, takich jak indeks cen konsumpcyjnych (CPI), gdzie różne produkty mają różne wagi w zależności od ich znaczenia w koszyku konsumpcyjnym.
+  </p>
   <div class="obramowanieprzykład">
     <p><b>Przykład 1:</b> Oblicz średnią ważoną dla liczb 2, 4 i 6 z wagami odpowiednio 1, 2 i 3:</p>
     <p>
@@ -84,6 +102,30 @@
       \]
     </p>
   </div>
+  <div class="obramowanieprzykład">
+  <p><b>Przykład 3:</b> Kasia ma oceny 4 i 5 ze sprawdzianów oraz 3, 4 i 5 z kartkówek, gdzie oceny ze sprawdzianów są dwa razy ważniejsze niż z kartkówek:</p>
+  <p>
+    \[
+    \overline{x}_w = \frac{2 \cdot 4 + 2 \cdot 5 + 1 \cdot 3 + 1 \cdot 4 + 1 \cdot 5}{2 + 2 + 1 + 1 + 1} = \frac{8+10+3+4+5}{7}=\frac{30}{7} \approx 4.29
+    \]
+  </p>
+</div>
+<div class="obramowanieprzykład">
+  <p><b>Przykład 4:</b> Jan ma oceny: 2 z pracy domowej (waga 1), 3 z projektu (waga 3) oraz 5 ze sprawdzianu (waga 5). Oblicz średnią ważoną:</p>
+  <p>
+    \[
+    \overline{x}_w = \frac{2 \cdot 1 + 3 \cdot 3 + 5 \cdot 5}{1 + 3 + 5} = \frac{2 + 9 + 25}{9} = \frac{36}{9} = 4
+    \]
+  </p>
+</div>
+<div class="obramowanieprzykład">
+  <p><b>Przykład 5:</b> W firmie oceniano pracowników na podstawie trzech kryteriów: jakość pracy (waga 4), punktualność (waga 3) i współpraca w zespole (waga 2). Pracownik uzyskał oceny 5, 4 i 3 odpowiednio dla tych kryteriów. Oblicz średnią ważoną:</p>
+  <p>
+    \[
+    \overline{x}_w = \frac{5 \cdot 4 + 4 \cdot 3 + 3 \cdot 2}{4 + 3 + 2} = \frac{20 + 12 + 6}{9} = \frac{38}{9} \approx 4.22
+    \]
+  </p>
+</div>
   <div class="obramowaniezadanie">
     <p><b>Zadanie 1:</b> Oblicz średnią ważoną dla liczb 10, 20, 30 z wagami 1, 4, 5.</p>
     <button onclick="showAnswer()">Pokaż odpowiedź</button>
@@ -96,6 +138,13 @@
     <button onclick="showAnswer2()">Pokaż odpowiedź</button>
     <p id="answer2" style="display:none;">Średnia ważona wynosi:
         \(\overline{x}_w = \frac{2 \cdot 1 + 5 \cdot 3 + 3 \cdot 2 + 4 \cdot 4}{1 + 3 + 2 + 4} = \frac{2 + 15 + 6 + 16}{10} = \frac{39}{10} = 3.9\).
+    </p>
+  </div>
+  <div class="obramowaniezadanie">
+    <p><b>Zadanie 3:</b> Oblicz średnią ważoną ocen: 3 (waga 2), 4 (waga 3), 5 (waga 4) i 2 (waga 1).</p>
+    <button onclick="showAnswer3()">Pokaż odpowiedź</button>
+    <p id="answer3" style="display:none;">Średnia ważona wynosi:
+        \(\overline{x}_w = \frac{3 \cdot 2 + 4 \cdot 3 + 5 \cdot 4 + 2 \cdot 1}{2 + 3 + 4 + 1} = \frac{6 + 12 + 20 + 2}{10} = \frac{40}{10} = 4\).
     </p>
   </div>
   <div class="buttoncontainer">
@@ -112,6 +161,9 @@
     }
     function showAnswer2() {
         document.getElementById('answer2').style.display = 'block';
+    }
+    function showAnswer3() {
+        document.getElementById('answer3').style.display = 'block';
     }
   </script>
 </body>
