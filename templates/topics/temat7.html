@@ -47,7 +47,35 @@
       </style>
 </head>
 <body>
-    <h1>Temat 7</h1>
+    <h1>Temat 7: Moda</h1>
+    <p><b>Moda</b> to najczęściej występująca wartość liczbowa.</p>
+    <div class="'obramowanieprzykład">
+    <p><b>Przykład 1.</b>
+      Dla liczb \(7, -1, 3, 7, 7, 6\) moda wynosi 7.
+    </p>
+    </div>
+
+    <div class="obramowanieprzykład">
+      <p><b>Przykład 2.</b>
+      Dla liczb \(1, 1, 2, 2, 3\) istnieją dwie mody: 1 i 2.</p>
+    </div>
+
+    <div class="obramowanieprzykład">
+      <p><b>Przykład 3.</b>
+      Dla liczb \(4, 4, 5, 5, 6, 6\) moda nie istnieje, ponieważ wszystkie liczby występują jednakową ilość razy.</p>
+    </div>
+
+    <div class="obramowaniezadanie">
+      <p><b>Zadanie 1.</b>Znajdź modę liczb \(1, 7, 1, 11, 4, 6, 7, 3, 6, 1, 3, 1\)</p>
+      <button onclick="showAnswer()">Pokaż odpowiedź</button>
+      <p id="answer" style="display:none;">Moda to 1, ponieważ ta liczba występuje aż 4 razy.
+      </p>
+    </div>
+    <script>
+      function showAnswer() {
+          document.getElementById('answer').style.display = 'block';
+      }
+      </script>
     <div class="buttoncontainer">
         <a href = "/"> 
             <button>Strona główna</button>
