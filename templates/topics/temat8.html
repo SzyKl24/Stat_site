@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="description" content="Strona temat 2">
+    <meta name="description" content="Strona temat 8">
     <title>Temat 8</title>
     <style>
         body {
@@ -10,7 +10,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 35vh;
+        height: 290vh;
         margin: 0;
         font-family: Arial, sans-serif;
       }
@@ -42,12 +42,59 @@
         margin: 30px;
       }
       p {
-        margin: 30px;
+        margin: 20px;
       }
+      b {
+            font-weight: bold;
+        }
+      .obramowanieprzykład {
+            border: 1px solid #4CAF50;
+            padding: 10px;
+            margin: 10px 0;
+            text-align: left; 
+        }
+      .obramowaniezadanie {
+            border: 1px solid #cb3131;
+            padding: 10px;
+            margin: 10px 0;
+        }
       </style>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-    <h1>Temat 8</h1>
+    <h1>Temat 8: Wariancja</h1>
+    <p><b>Wariancja</b> liczb \(x_1, x_2, \ldots, x_n\) to średnia arytmetyczna kwadratów odchyleń od ich średniej arytmetycznej:
+      \[
+      \sigma^2 = \frac{(x_1 - \overline{X})^2 + (x_2 - \overline{X})^2 + \ldots + (x_n - \overline{X})^2}{n}
+      \]
+    </p>
+    <div class="obramowanieprzykład">
+      <p><b>Przykład 1.</b>
+      Obliczymy wariancję liczb \(x_1 = 4, x_2 = -3, x_3 = 2\).
+      Najpierw policzymy średnią arytmetyczną:
+        \[
+        \overline{X} = \frac{4 + (-3) + 2}{3} = 1
+        \]
+      Zatem:
+        \[
+        \sigma^2 = \frac{(4-1)^2 + (-3-1)^2 + (2-1)^2}{3} = \frac{9 + 16 + 1}{3} = \frac{26}{3}
+        \]
+      </p>
+    </div>
+
+    <div class="obramowaniezadanie">
+      <p><b>Zadanie 1.</b> Każdy z trzech zawodników wykonał serię 13 rzutów do kosza. Liczba rzutów celnych wynosiła odpowiednio 5,7 oraz 9. Oblicz wariancję celnych rzutów do kosza.</p>
+      <button onclick="showAnswer()">Pokaż odpowiedź</button>
+      <p id="answer" style="display:none;">Liczba rzutów w serii (\(13\)) nas nie interesuje. Aby obliczyć wariancję, musimy zacząć od znalezienia średniej arytmetycznej:
+        \[
+        \overline{X} = \frac{5 + 7 + 9}{3} = 7
+        \]
+      Zatem wariancja wynosi:
+        \[
+        \sigma^2 = \frac{(5-7)^2 + (7-7)^2 + (9-7)^2}{3} = \frac{4 + 0 + 4}{3} = \frac{8}{3}
+        \]
+      </p>
+    </div>
     <div class="buttoncontainer">
         <a href = "/"> 
             <button>Strona główna</button>
@@ -55,4 +102,9 @@
         <a href = "/spis"> 
             <button>Spis</button>
         </a>
+        <script>
+          function showAnswer() {
+              document.getElementById('answer').style.display = 'block';
+          }
+          </script>
 </html>
