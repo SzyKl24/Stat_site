@@ -46,10 +46,48 @@
         padding: 20px;
         text-align: left;
       }
+      .obramowanieprzykład {
+            border: 1px solid #4CAF50;
+            padding: 10px;
+            margin: 10px 0;
+            text-align: left; 
+        }
+        .obramowaniezadanie {
+            border: 1px solid #cb3131;
+            padding: 10px;
+            margin: 10px 0;
+        }
       </style>
+      <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-    <h1>Temat 6</h1>
+    <h1>Temat 6: Mediana</h1>
+    <p>Mediana to wartość, która dzieli uporządkowany ciąg liczb na dwie równe części. W ciągu uporządkowanym liczby są ustawione od najmniejszej do największej. Jeśli ciąg ma parzystą liczbę elementów, mediana to średnia arytmetyczna dwóch środkowych liczb. Jeśli ciąg ma nieparzystą liczbę elementów, mediana to środkowa liczba. </p>
+    <p>Mediana jest obliczana według wzoru:</p>
+    <p>\[ \text{Mediana} = \left\{ \begin{array}{ll}
+        \text{mediana} = x_{\frac{n+1}{2}} & \text{dla n parzystego} \\
+        \text{mediana} = \frac{x_{\frac{n}{2}} + x_{\frac{n}{2}+1}}{2} & \text{dla n nieparzystego}
+        \end{array} \right. \]</p>
+    <div class="obramowanieprzykład">
+        <p>Przykład:</p>
+        <p>W ciągu liczb 1, 2, 3, 4, 5 mediana to 3, ponieważ jest to środkowa liczba.</p>
+        <p>W ciągu liczb 1, 2, 3, 4, 5, 6 mediana to 3.5, ponieważ jest to średnia arytmetyczna dwóch środkowych liczb 3 i 4.</p>
+    </div>
+    <p>Mediana jest używana do opisu rozkładu danych. Jest ona mniej wrażliwa na wartości skrajne niż średnia arytmetyczna. </p>
+    <div class="obramowaniezadanie">
+        <p><b>Zadanie 1:</b></p>
+        <p>Oblicz medianę dla ciągu liczb: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10.</p>
+        <button onclick="showAnswer()">Pokaż odpowiedź</button>
+        <p id="answer" style="display: none;">
+          Mediana to 5.5, ponieważ jest to średnia arytmetyczna dwóch środkowych liczb 5 i 6.</p>
+    </div>
+    <div class=" obramowaniezadanie">
+        <p><b>Zadanie 2:</b></p>
+        <p>Oblicz medianę dla ciągu liczb: 1, 2, 3, 4, 5, 6, 7, 8, 9.</p>
+        <button onclick="showAnswer2()">Pokaż odpowiedź</button>
+        <p id="answer2" style="display: none;">
+          Mediana to 5, ponieważ jest to środkowa liczba.</p>
+    </div>
     <div class="buttoncontainer">
         <a href = "/temat5"> 
             <button>Poprzedni temat</button>
@@ -62,4 +100,16 @@
         </a>
         <a href = "/temat7"> 
             <button>Następny temat</button>
+        </a>
+    </div>
+    <script>
+      function showAnswer() {
+          document.getElementById('answer').style.display = 'block';
+      }
+      function showAnswer2() {
+          document.getElementById('answer2').style.display = 'block';
+      }
+    </script>
+          
+      
 </html>
