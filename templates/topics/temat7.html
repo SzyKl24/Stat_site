@@ -88,10 +88,19 @@
       <p id="answer" style="display:none;">Moda to 1, ponieważ ta liczba występuje aż 4 razy.
       </p>
     </div>
+    <div class="obramowaniezadanie">
+        <p><b>Zadanie 2.</b> Znajdź modę liczb \(5, 2, 9, 8, 5, 9, 11, 8\)</p>
+        <button onclick="showAnswer2()">Pokaż odpowiedź</button>
+        <p id="answer2" style="display:none;">Moda to 5, 9 i 8, ponieważ te liczby występują najczęściej, każda po 2 razy.
+        </p>
+    </div>
     <script>
-      function showAnswer() {
-          document.getElementById('answer').style.display = 'block';
-      }
+        function showAnswer() {
+            document.getElementById('answer').style.display = 'block';
+        }
+        function showAnswer2() {
+            document.getElementById('answer2').style.display = 'block';
+        }
       </script>
     <div class="buttoncontainer">
         <a href = "/temat6"> 
