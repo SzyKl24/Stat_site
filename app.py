@@ -18,37 +18,41 @@ def contact_us():
 def spis():
     return render_template('spis.html')
 
-@app.route('/temat2')
+@app.route('/wprowadzenie')
 def temat2():
-    return render_template('topics/temat2.html')
+    return render_template('topics/wprowadzenie.html')
 
-@app.route('/temat1')
+@app.route('/średnia-arytmetyczna')
 def temat1():
-    return render_template('topics/temat1.html')
+    return render_template('topics/sr_aryt.html')
 
-@app.route('/temat3')
+@app.route('/średnia-ważona')
 def temat3():
-    return render_template('topics/temat3.html')
+    return render_template('topics/sr_wag.html')
 
-@app.route('/temat4')
+@app.route('/błędy-pomiaru')
 def temat4():
-    return render_template('topics/temat4.html')
+    return render_template('topics/bledy.html')
 
-@app.route('/temat5')
+@app.route('/wariacje')
 def temat5():
-    return render_template('topics/temat5.html')
+    return render_template('topics/wariacje.html')
 
-@app.route('/temat6')
+@app.route('/odchylenia')
 def temat6():
-    return render_template('topics/temat6.html')    
+    return render_template('topics/odchylenia.html')    
 
-@app.route('/temat7')  
+@app.route('/mediana')  
 def temat7():
-    return render_template('topics/temat7.html')    
+    return render_template('topics/mediana.html')    
 
-@app.route('/temat8')   
+@app.route('/moda')   
 def temat8():
-    return render_template('topics/temat8.html')    
+    return render_template('topics/moda.html')    
+
+@app.route('/kalkulator')
+def kalkulator():
+    return render_template('kalkulator.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
