@@ -6,51 +6,49 @@
     <title>Kalkulator Średniej i Średniej Ważonej</title>
     <style>
         body {
-          display: flex;
-          flex-direction: column;
-          justify-content: left;
-          align-items: center;
-          height: auto;
-          margin: auto;
-          font-family: Arial, sans-serif;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
         }
-        p {
-          margin-right: 100px;
-          margin-left: 100px;
+
+        h1 {
+            color: #333;
         }
-        h2 {
-          margin: 30px;
-          justify-content: left;
-          align-items: left;
+        form {
+            margin-bottom: 20px;
         }
-        .buttoncontainer {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          margin-top: 20px;
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input {
+            padding: 8px;
+            width: 100%;
+            max-width: 300px;
+            box-sizing: border-box;
         }
         button {
-          background-color: #4CAF50; /* Zielony */
-          border: none;
-          color: white;
-          padding: 15px 32px;
-          text-align: center;
-          text-decoration: none;
-          display: inline-block;
-          font-size: 16px;
-          margin: 4px 2px;
-          cursor: pointer;
+        background-color: #4CAF50; /* Zielony */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
         }
         button:hover {
-          background-color: #45a049; /* Ciemniejszy zielony po najechaniu */
+            background-color: #4cae4c;
         }
-        .result {
-          margin-top: 20px;
-        }   
-        input[type="number"] {
-            width: 100px;
-            margin: 5px;
+
+        h2 {
+            color: #333;
         }
+        
         .obramowanieprzykład {
             border: 1px solid #4CAF50;
             padding: 10px;
@@ -60,74 +58,26 @@
       </style>
 </head>
 <body>
-    <h1>Kalkulator Średniej i Średniej Ważonej</h1>
-    
-    <div class="obramowanieprzykład">
-        <h2>Średnia</h2>
-        <div id="average-inputs">
-            <input type="number" id="average-value1" placeholder="Wartość 1">
-            <input type="number" id="average-value2" placeholder="Wartość 2">
-            <input type="number" id="average-value3" placeholder="Wartość 3">
+    <h1>Kalkulator Średniej Ważonej</h1>
+    <form method="post">
+        <div>
+            <label for="values">Wartości (oddzielone przecinkami):</label>
+            <input type="text" name="values" required>
         </div>
-        <button onclick="calculateAverage()">Oblicz Średnią</button>
-        <div class="result" id="average-result"></div>
-    </div>
-   
-
-    <div class = "obramowanieprzykład">
-        <h2>Średnia Ważona</h2>
-        <div id="weighted-inputs">
-            <input type="number" id="weighted-value1" placeholder="Wartość 1">
-            <input type="number" id="weight1" placeholder="Waga 1">
-            <input type="number" id="weighted-value2" placeholder="Wartość 2">
-            <input type="number" id="weight2" placeholder="Waga 2">
-            <input type="number" id="weighted-value3" placeholder="Wartość 3">
-            <input type="number" id="weight3" placeholder="Waga 3">
+        <div>
+            <label for="weights">Wagi (oddzielone przecinkami):</label>
+            <input type="text" name="weights" required>
         </div>
-        <button onclick="calculateWeightedAverage()">Oblicz Średnią Ważoną</button>
-        <div class="result" id="weighted-result"></div>
-    </div>
+        <div>
+            <button type="submit">Oblicz</button>
+        </div>
+    </form>
+    {% if weighted_average is not none %}
+    <h2>Średnia ważona: {{ weighted_average }}</h2>
+    {% elif error_message is not none %}
+    <h2>{{ error_message }}</h2>
+    {% endif %}
 
-    <script>
-        function calculateAverage() {
-            let values = [];
-            let value1 = parseFloat(document.getElementById('average-value1').value);
-            let value2 = parseFloat(document.getElementById('average-value2').value);
-            let value3 = parseFloat(document.getElementById('average-value3').value);
-            if (!isNaN(value1)) values.push(value1);
-            if (!isNaN(value2)) values.push(value2);
-            if (!isNaN(value3)) values.push(value3);
-            if (values.length > 0) {
-                let sum = values.reduce((a, b) => a + b, 0);
-                let average = sum / values.length;
-                document.getElementById('average-result').innerText = 'Średnia: ' + average.toFixed(2);
-            } else {
-                document.getElementById('average-result').innerText = 'Wprowadź przynajmniej jedną wartość.';
-            }
-        }
-
-        function calculateWeightedAverage() {
-            let values = [];
-            let weights = [];
-            let value1 = parseFloat(document.getElementById('weighted-value1').value);
-            let weight1 = parseFloat(document.getElementById('weight1').value);
-            let value2 = parseFloat(document.getElementById('weighted-value2').value);
-            let weight2 = parseFloat(document.getElementById('weight2').value);
-            let value3 = parseFloat(document.getElementById('weighted-value3').value);
-            let weight3 = parseFloat(document.getElementById('weight3').value);
-            if (!isNaN(value1) && !isNaN(weight1)) { values.push(value1); weights.push(weight1); }
-            if (!isNaN(value2) && !isNaN(weight2)) { values.push(value2); weights.push(weight2); }
-            if (!isNaN(value3) && !isNaN(weight3)) { values.push(value3); weights.push(weight3); }
-            if (values.length > 0 && weights.length > 0) {
-                let weightedSum = values.reduce((sum, value, index) => sum + value * weights[index], 0);
-                let totalWeights = weights.reduce((a, b) => a + b, 0);
-                let weightedAverage = weightedSum / totalWeights;
-                document.getElementById('weighted-result').innerText = 'Średnia Ważona: ' + weightedAverage.toFixed(2);
-            } else {
-                document.getElementById('weighted-result').innerText = 'Wprowadź przynajmniej jedną wartość i jej wagę.';
-            }
-        }
-    </script>
     <div class="buttoncontainer">
         <a href="/">
             <button>Strona główna</button>

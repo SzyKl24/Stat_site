@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -50,9 +50,25 @@ def temat7():
 def temat8():
     return render_template('topics/moda.html')    
 
-@app.route('/kalkulator')
-def kalkulator():
-    return render_template('kalkulator.html')
+@app.route('/kalkulator', methods=['GET', 'POST'])
+def calculate():
+    weighted_average = None
+    error_message = None
+    if request.method == 'POST':
+        
+        values = request.form['values']
+        weights = request.form['weights']
+            
+        values = [float(v) for v in values.split(',')]
+        weights = [float(w) for w in weights.split(',')]
+            
+        if len(values) != len(weights):
+            raise ValueError("Liczba wartości i wag musi być taka sama.")
+            
+        weighted_average = sum(v * w for v, w in zip(values, weights)) / sum(weights)
+        
+
+    return render_template('kalkulator.html', weighted_average=weighted_average, error_message=error_message)
 
 if __name__ == '__main__':
     app.run(debug=True)
