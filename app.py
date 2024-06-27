@@ -1,4 +1,7 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, Response
+import numpy as np
+import matplotlib.pyplot as plt
+import io
 
 app = Flask(__name__)
 
@@ -48,7 +51,20 @@ def temat7():
 
 @app.route('/moda')   
 def temat8():
-    return render_template('topics/moda.html')    
+    return render_template('topics/moda.html')
+
+def plot_hist():
+    fig = create_figure()
+    fig.savefig('static/histogram.png')
+
+def create_figure():
+    oceny = [2, 3, 3, 4, 4, 4, 5, 5, 5, 5] 
+    fig, ax = plt.subplots()
+    ax.hist(oceny, bins=30, alpha=0.75, color='blue')
+    ax.set_title('Histogram')
+    ax.set_xlabel('Wartości')
+    ax.set_ylabel('Częstotliwość')
+    return fig    
 
 @app.route('/kalkulator', methods=['GET', 'POST'])
 def calculate():
@@ -71,5 +87,7 @@ def calculate():
     return render_template('kalkulator.html', weighted_average=weighted_average, error_message=error_message)
 
 if __name__ == '__main__':
+    plot_hist()
     app.run(debug=True)
+    
 
