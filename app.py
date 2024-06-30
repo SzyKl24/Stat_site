@@ -53,18 +53,31 @@ def temat7():
 def temat8():
     return render_template('topics/moda.html')
 
-def plot_hist():
-    fig = create_figure()
-    fig.savefig('static/histogram.png')
+def plot_hist_mod():
+    fig_mod = create_figure_mod()
+    fig_mod.savefig('static/histogram_mod.png')
 
-def create_figure():
-    oceny = [2, 3, 3, 4, 4, 4, 5, 5, 5, 5] 
-    fig, ax = plt.subplots()
-    ax.hist(oceny, bins=30, alpha=0.75, color='blue')
+def plot_hist_med():
+    fig_med = create_figure_med()
+    fig_med.savefig('static/histogram_med.png')
+
+def create_figure_med():
+    oceny = [2, 3, 3.5, 3.5, 3.5, 4.5, 4, 4, 4.5, 5, 5, 5.5, 5] 
+    fig_med, ax = plt.subplots()
+    ax.hist(oceny, bins=15, alpha=0.75, color='blue')
     ax.set_title('Histogram')
     ax.set_xlabel('Wartości')
     ax.set_ylabel('Częstotliwość')
-    return fig    
+    return fig_med
+
+def create_figure_mod():
+    oceny = [2, 3, 3.5, 3.5, 3.5, 4.5, 4, 4.5, 5, 5, 5.5, 5] 
+    fig_mod, ax = plt.subplots()
+    ax.hist(oceny, bins=15, alpha=0.75, color='blue')
+    ax.set_title('Histogram')
+    ax.set_xlabel('Wartości')
+    ax.set_ylabel('Częstotliwość')
+    return fig_mod    
 
 @app.route('/kalkulator', methods=['GET', 'POST'])
 def calculate():
@@ -87,7 +100,8 @@ def calculate():
     return render_template('kalkulator.html', weighted_average=weighted_average, error_message=error_message)
 
 if __name__ == '__main__':
-    plot_hist()
+    plot_hist_mod()
+    plot_hist_med()
     app.run(debug=True)
     
 
