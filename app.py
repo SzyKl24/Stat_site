@@ -1,7 +1,6 @@
-from flask import Flask, render_template, request, Response
-import numpy as np
+from flask import Flask, render_template, request
 import matplotlib.pyplot as plt
-import io
+
 
 app = Flask(__name__)
 
