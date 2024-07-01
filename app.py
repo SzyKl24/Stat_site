@@ -90,12 +90,18 @@ def calculate():
             
         values = [float(v) for v in values.split(',')]
         weights = [float(w) for w in weights.split(',')]
-            
+
+        if len(weights) == 1 and len(values) > 1:
+            weights = [1] * len(values)
         if len(values) != len(weights):
-            raise ValueError("Liczba wartości i wag musi być taka sama.")
-            
+            raise ValueError('Wprowadzono różną ilość wartości i wag')
+        if sum(weights) == 0:
+            raise ValueError('Suma wag nie może być równa 0')
+        if any(w < 0 for w in weights):
+            raise ValueError('Wagi nie mogą być ujemne')
+           
         weighted_average = sum(v * w for v, w in zip(values, weights)) / sum(weights)
-        
+        weighted_average = round(weighted_average, 2)
 
     return render_template('kalkulator.html', weighted_average=weighted_average, error_message=error_message)
 
