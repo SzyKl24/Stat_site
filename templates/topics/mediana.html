@@ -92,6 +92,13 @@
         <p id="answer2" style="display: none;">
           Mediana to 5, ponieważ jest to środkowa liczba.</p>
     </div>
+    <div class="obramowaniezadanie">
+      <p><b>Zadanie 3:</b></p>
+      <p>Oblicz medianę ocen przedstawionych na histogramie</p>
+      <img src = "/static/histogram_med.png" alt = "histogram" width = "500" height = "400">
+      <button onclick="showAnswer3()">Pokaż odpowiedź</button>
+      <p id="answer3" style="display: none;">Mediana to 4, ponieważ ocen jest 13, więc szukaną miedianą naszego zestawu jest liczba 4 znajdująca się na 7 pozycji w uporządkowanej liście ocen</p>
+    </div>
     <div class="buttoncontainer">
         <a href = "/odchylenia"> 
             <button>Poprzedni temat</button>
@@ -112,6 +119,9 @@
       }
       function showAnswer2() {
           document.getElementById('answer2').style.display = 'block';
+      }
+      function showAnswer3() {
+          document.getElementById('answer3').style.display = 'block';
       }
     </script>
           

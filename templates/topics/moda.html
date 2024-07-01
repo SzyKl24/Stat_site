@@ -95,10 +95,10 @@
         </p>
     </div>
     <div class="obramowaniezadanie">
-        <p><b>Zadanie 3.</b> Znajdź modę liczb przedstawionych na histogramie</p>
-        <img src="/static/histogram.png" alt="histogram" width="400" height="300">
+        <p><b>Zadanie 3.</b> Znajdź modę ocen przedstawionych na histogramie</p>
+        <img src="/static/histogram_mod.png" alt="histogram" width="400" height="300">
         <button onclick="showAnswer()">Pokaż odpowiedź</button>
-        <p id="answer" style="display:none;">
+        <p id="answer" style="display:none;"> Moda to 5 ponieważ to właśnie ta ocena była najczęściej wystawiana.
         </p>
     </div>
     <script>
@@ -107,6 +107,9 @@
         }
         function showAnswer2() {
             document.getElementById('answer2').style.display = 'block';
+        }
+        function showAnswer3() {
+            document.getElementById('answer3').style.display = 'block';
         }
       </script>
     <div class="buttoncontainer">
