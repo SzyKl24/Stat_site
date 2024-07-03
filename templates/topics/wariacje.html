@@ -83,7 +83,13 @@
         \]
       </p>
     </div>
-
+    <p><b>Zastosowania wariancji:</b></p>
+    <ul>
+      <li>Wariancja jest używana do pomiaru zmienności danych. Jest to szczególnie ważne w statystyce, gdzie pomaga w analizie rozkładu danych.</li>
+      <li>W finansach wariancja służy do oceny ryzyka związanego z inwestycjami. Większa wariancja oznacza większe ryzyko.</li>
+      <li>Wariancja jest podstawą do dalszych analiz statystycznych, takich jak obliczanie odchylenia standardowego i testów statystycznych.</li>
+      <li>Wariancja jest wykorzystywana w kontrolowaniu jakości, gdzie pomaga monitorować stabilność procesów produkcyjnych.</li>
+    </ul>
     <div class="obramowaniezadanie">
       <p><b>Zadanie 1.</b> Każdy z trzech zawodników wykonał serię 13 rzutów do kosza. Liczba rzutów celnych wynosiła odpowiednio 5,7 oraz 9. Oblicz wariancję celnych rzutów do kosza.</p>
       <button onclick="showAnswer()">Pokaż odpowiedź</button>
@@ -97,6 +103,26 @@
         \]
       </p>
     </div>
+    <div class="obramowaniezadanie">
+        <p><b>Zadanie 2.</b> Oblicz wariancję zestawu liczb \(5, 2, 9, 8, 5, 9, 11, 8\)</p>
+        <button onclick="showAnswer2()">Pokaż odpowiedź</button>
+        <p id="answer2" style="display:none;">
+        Najpierw obliczamy średnią arytmetyczną:
+          \[
+          \overline{X} = \frac{5 + 2 + 9 + 8 + 5 + 9 + 11 + 8}{8} = \frac{57}{8} = 7.125
+          \]
+        Następnie obliczamy wariancję:
+          \[
+          \sigma^2 = \frac{(5-7.125)^2 + (2-7.125)^2 + (9-7.125)^2 + (8-7.125)^2 + (5-7.125)^2 + (9-7.125)^2 + (11-7.125)^2 + (8-7.125)^2}{8}
+          \]
+          \[
+          = \frac{4.515625 + 26.265625 + 3.515625 + 0.765625 + 4.515625 + 3.515625 + 15.015625 + 0.765625}{8}
+          \]
+          \[
+          = \frac{58.875}{8} = 7.359375
+          \]
+        </p>
+      </div>
     <div class="buttoncontainer">
         <a href = "/błędy-pomiaru"> 
             <button>Poprzedni temat</button>
@@ -110,8 +136,11 @@
             <button>Następny temat</button>
         </a>
         <script>
-          function showAnswer() {
-              document.getElementById('answer').style.display = 'block';
-          }
+            function showAnswer() {
+                document.getElementById('answer').style.display = 'block';
+            }
+            function showAnswer2() {
+                document.getElementById('answer2').style.display = 'block';
+            }
           </script>
 </html>
